@@ -7,6 +7,8 @@ import cors from "cors";
 
 import * as middlewares from "./middlewares";
 
+import api from "./api";
+
 config();
 
 const app = express();
@@ -16,9 +18,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use("/", () => {
-    console.log("Server is live");
-})
+app.use("/api/v1", api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
