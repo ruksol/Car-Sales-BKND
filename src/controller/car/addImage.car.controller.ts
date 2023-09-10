@@ -6,7 +6,7 @@ export const addImage = async (req: Request, res: Response) => {
     const { id } = req.params;
 
     try {
-        if(req.method === "POSt"){
+        if(req.method === "POST"){
             if(req.files) {
                 const files = req.files;
                 const urls = await loop(files);
